@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Budget Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<select onchange="checkIncome()" id= "chooser">
+    <option value="null">null</option>
+    <option value="biweekly">Bi-Weekly</option>
+    <option value="weekly">Weekly</option>
+    <option value="monthly">Monthly</option>
+</select>
+<div hidden id="Income">
+    <label id="Income1" hidden for="Income1">Week 1 Income:</label>
+    <input type="number" hidden id="Income1e" name="Income" size="10">
+    <label id="Income2" hidden for="Income2">Week 2 Income:</label>
+    <input type="number" hidden id="Income2e" name="Income" size="10">
+    <label id="Income3" hidden for="Income3">Week 3 Income:</label>
+    <input type="number" hidden id="Income3e" name="Income" size="10">
+    <label id="Income4" hidden for="Income4">Week 4 Income:</label>
+    <input type="number" hidden id="Income4e" name="Income" size="10">
+</div>
+<button id="button" onclick="myFunction()">cliklmao</button>
+</body>
+<script type="text/javascript">
+var IncomeChooser = document.getElementById("chooser");
+function myFunction(){
+    console.log(IncomeChooser.value);
+}
+function checkIncome(){
+value = IncomeChooser.value;
+if(value != 'null'){
+    if(value == "monthly"){
+        document.getElementById('Income').style.display = "block";
+        document.getElementById('Income1').textContent = "Monthly Income: ";
+        document.getElementById('Income1').style.display = "block";
+        document.getElementById('Income1e').style.display = "block";
+        document.getElementById('Income2').style.display = "none";
+        document.getElementById('Income2e').style.display = "none";
+        document.getElementById('Income3').style.display = "none";
+        document.getElementById('Income3e').style.display = "none";
+        document.getElementById('Income4').style.display = "none";
+        document.getElementById('Income4e').style.display = "none";
+    }
+    if(value == "biweekly"){
+        document.getElementById('Income').style.display = "block";
+        document.getElementById('Income1').textContent = "Week 1 Income: ";
+        document.getElementById('Income2').textContent = "Week 3 Income: ";
+        document.getElementById('Income1').style.display = "block";
+        document.getElementById('Income1e').style.display = "block";
+        document.getElementById('Income2').style.display = "block";
+        document.getElementById('Income2e').style.display = "block";
+        document.getElementById('Income3').style.display = "none";
+        document.getElementById('Income3e').style.display = "none";
+        document.getElementById('Income4').style.display = "none";
+        document.getElementById('Income4e').style.display = "none";
+    }
+    if(value == "weekly"){
+        document.getElementById('Income').style.display = "block";
+        document.getElementById('Income1').textContent = "Week 1 Income: ";
+        document.getElementById('Income2').textContent = "Week 2 Income: ";
+        document.getElementById('Income3').textContent = "Week 3 Income: ";
+        document.getElementById('Income4').textContent = "Week 4 Income: ";
+        document.getElementById('Income1').style.display = "block";
+        document.getElementById('Income1e').style.display = "block";
+        document.getElementById('Income2').style.display = "block";
+        document.getElementById('Income2e').style.display = "block";
+        document.getElementById('Income3').style.display = "block";
+        document.getElementById('Income3e').style.display = "block";
+        document.getElementById('Income4').style.display = "block";
+        document.getElementById('Income4e').style.display = "block";
+    }
+}else{
+    document.getElementById('Income').style.display = "none";
+}
+}
+
+</script>
+</html>
